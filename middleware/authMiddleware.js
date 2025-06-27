@@ -12,7 +12,9 @@ export const authenticateToken = async (req, res, next) => {
 
     if (!user || user.currentToken !== token) {
       res.clearCookie("token");
-      return res.redirect("/login?message=Logged out due to new login");
+      return res.redirect(
+        "/login?message=Logged out due to new login on different device"
+      );
     }
 
     req.user = user;
