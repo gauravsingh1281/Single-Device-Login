@@ -18,7 +18,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-await mongoose.connect("mongodb://localhost:27017/singleTabLogin");
+await mongoose.connect(process.env.MongoDB_URI);
 
 app.use(authRoutes);
 
