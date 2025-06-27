@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('partials/header') %>
 
-<head>
-    <meta charset="UTF-8" />
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="/styles.css" />
-</head>
+    <body
+        class="min-h-screen flex items-center justify-center bg-gradient-to-r from-pink-50 via-white to-pink-100 relative">
+        <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 space-y-6 border border-gray-200">
+            <h2 class="text-center text-3xl text-gray-600">Welcome, <%= user.username %> 👋</h2>
+            <p class="text-center text-lg text-gray-500">You're now logged in to your dashboard.</p>
 
-<body>
-    <h1>Welcome, <%= user.username %> 👋</h1>
-    <p>This is your secure dashboard.</p>
-    <button onclick="window.location.href='/logout'" type="button">Logout</button>
-</body>
+            <div class="flex justify-center">
+                <button onclick="window.location.href='/logout'"
+                    class="bg-[#FD7913] hover:bg-[#fd7813c0] text-white font-semibold px-6 py-2 rounded-lg transition">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </body>
 
-</html>
+    <%- include('partials/footer') %>
